@@ -1,0 +1,21 @@
+<?php
+	include "koneksaun.php";
+	$naran =$_POST['naran'];
+	$dm =$_POST['dm'];
+	$sexo =$_POST['sexo'];
+	$n_estudu = $_POST['n_estudu'];
+	$municipio = $_POST['municipio'];
+	$no_tlf = $_POST['no_tlf'];
+	$email = $_POST['email'];
+
+
+	$sql = "insert into tb_dadus (naran, dm, sexo, n_estudu, municipio, no_tlf, email) value ('$naran', '$dm', '$sexo','$n_estudu', '$municipio', '$no_tlf', '$email')";
+	$query = mysqli_query($con, $sql);
+	if ($query) {
+		echo "<script>alert('Ita Rejistu ho Susessu');
+						document.location.href='../index.php?page=dadus';
+			  </script>";
+		}else{
+			echo "10kulpa ita failla atu rejistu";
+		};
+ ?>
